@@ -70,8 +70,9 @@ printf("1)Entrar al metro\n2)Usar el cablebus\n3)Rentar una ecobici\n4)Usar el r
 scanf("%d",&gasto); //con este scan se escanea la opcion dada por el usuario
 scanf("%c",&letra); //con este scan se busca no caer en el loop al introducir un caracter
 
-if (letra){
-printf("\n"); //con esto nos aseguramos de no caer en loop por caracter
+if (letra != NULL){
+printf("\nSolo puedes seleccionar un numero que este dentro de las opciones\n\n"); 
+//con esto nos aseguramos de no caer en loop por caracter
 }
 
 switch(gasto){ //se evalua la opcion dada y se entra a la sentencia elegida
@@ -137,7 +138,7 @@ case 10: //opcion para abrir el archivo de texto que contiene las instrucciones 
         return -1; //se indica al sistema que hubo un error al intentar abrir el archivo
     }
     while((caracter=fgetc(arch))!= EOF){ /*se crea el ciclo para escribir en la consola lo que esta dentro del archivo de texto
-                                           hasta llegar al EOF o caracter final del archivo*/
+                                            hasta llegar al EOF o caracter final del archivo*/
         printf("%c", caracter); //se imprime caracter por caracter
     }
 	fclose(arch); //se cierra el archivo de texto
@@ -159,7 +160,7 @@ case 11:
     break; //fin del switch
 
 default: //opcion invalida, es decir, que no esta dentro del conjunto de las opciones ofrecidas
-	printf("Esa opcion no es valida\n Ingresa una nuevamente \n\n");
+	printf("Esa opcion no es valida\n\n");
 	break; //fin opcion invalida
 }
 }
